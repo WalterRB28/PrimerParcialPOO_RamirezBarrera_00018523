@@ -1,9 +1,9 @@
-public abstract class Articulo {
+public class Articulo {
     protected String nombre;
     protected String modelo;
     protected String descripcion;
     protected double precio;
-    protected int tipo;
+
 
     public Articulo(){
         nombre = "";
@@ -11,12 +11,11 @@ public abstract class Articulo {
         descripcion = "";
         precio = 0;
     }
-    public Articulo(String nombre, String modelo, String descripcion, double precio, int tipo) {
+    public Articulo(String nombre, String modelo, String descripcion, double precio) {
         this.nombre = nombre;
         this.modelo = modelo;
         this.descripcion = descripcion;
         this.precio = precio;
-        this.tipo = tipo;
     }
 
     public Articulo(Articulo articulo){
@@ -24,15 +23,6 @@ public abstract class Articulo {
         modelo = articulo.modelo;
         descripcion = articulo.descripcion;
         precio = articulo.precio;
-        tipo = articulo.tipo;
-    }
-
-    public int getTipo() {
-        return tipo;
-    }
-
-    public void setTipo(int tipo) {
-        this.tipo = tipo;
     }
 
     public String getNombre() {

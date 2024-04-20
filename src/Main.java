@@ -67,8 +67,7 @@ public class Main {
         System.out.print("$");
         precio = sc.nextDouble();
 
-        //Persona persona = new Persona(DUI, nombre, fechaNacimiento, sexo, telefono);
-
+        Articulo articulo = new Articulo(nombre, modelo, descripcion, precio);
         int tipo = definirTipo();
 
         if (tipo == 1) {
@@ -80,6 +79,7 @@ public class Main {
             System.out.println("Ingrese el nombre del procesador: ");
             procesador = sc.nextLine();
 
+            Laptop laptop = new Laptop(articulo, RAM, procesador);
 
         } else if (tipo == 2) {
             int cantidadCamara;
@@ -89,9 +89,10 @@ public class Main {
             System.out.println("Ingrese el almacenamiento del telefono (como numero entero): ");
             almacenamientoTelefono = sc.nextInt();
 
-
+            Telefono telefono = new Telefono(articulo, cantidadCamara, almacenamientoTelefono);
         }
 
+        articulos.add(articulo);
     }
 
     private static int definirTipo() {
@@ -151,11 +152,6 @@ public class Main {
     }
 
     private static void mostrarArticulos() {
-        Scanner sc = new Scanner(System.in);
-        String nombre;
-        System.out.println("Ingrese el nombre del articulo para modificar su precio");
-        System.out.print("Nombre: ");
-        nombre = sc.nextLine();
         for (int i = 0; i < articulos.size(); i++){
                 System.out.println("Datos del producto:\n"+
                         "Nombre: "+articulos.get(i).getNombre()+"\n"+

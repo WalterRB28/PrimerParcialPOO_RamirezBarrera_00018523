@@ -1,4 +1,4 @@
-public class Laptop extends Articulo implements ArticuloCalcPrecDesc{
+public class Laptop extends Articulo{
     private int ramLaptop;
     private String procesadorLaptop;
 
@@ -24,18 +24,5 @@ public class Laptop extends Articulo implements ArticuloCalcPrecDesc{
         this.procesadorLaptop = procesadorLaptop;
     }
 
-    @Override
-    public double obtenerPrecio(double precio) {
-        return this.precio;
-    }
 
-    @Override
-    public void descripcionArticulo() {
-        System.out.println("Nombre: "+super.getNombre()
-            + "Modelo: "+super.getModelo()
-            + "Descrpcion: "+super.getDescripcion()
-            + "Precio: "+super.getPrecio()
-            + "RAM: "+this.getRamLaptop()
-            + "Procesador: "+this.getProcesadorLaptop());
-    }
 }
